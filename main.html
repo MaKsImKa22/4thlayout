@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курси програмування у Луцьку</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="photos/logo_Oxit.png" alt="Logo"></a>
+            </div>
+            <button class="burger-menu" aria-label="Toggle navigation">
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Програма курсу</a></li>
+                    <li><a href="#">Відгуки про курс</a></li>
+                    <li><a href="#">Відео</a></li>
+                    <li><a href="#">Ментори</a></li>
+                    <button class="apply-button">Подати заявку</button>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>Курси програмування у Луцьку</h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing 
+                        and typesetting industry. Lorem Ipsum has been 
+                        the industry's standard dummy text ever since 
+                        the 1500s, when an unknown printer took a galley
+                        of type and scrambled it to make 
+                        a type specimen book. It has survived not only five centuries, 
+                        but also the leap into electronic typesetting, remaining 
+                        essentially unchanged. It was popularised in the 1960s with 
+                        the release of Letraset sheets containing Lorem Ipsum passages, 
+                        and more recently with desktop publishing software like Aldus 
+                        PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+                <form class="hero-form">
+                    <h2>Зареєструватися на курси</h2>
+
+                    <div class="input-wrapper">
+                        <p>Ім'я<img src="photos/icons/required.png" alt="Empty Input" class="input-placeholder"></p>
+                        
+                        <input type="text" placeholder="Ім'я" required>
+                    </div>
+                    
+
+                    <div class="input-wrapper">
+                        <p>Прізвище<img src="photos/icons/required.png" alt="Empty Input" class="input-placeholder"></p>
+                        <input type="text" placeholder="Прізвище" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <p>Мене більше цікавить<img src="photos/icons/required.png" alt="Empty Input" class="input-placeholder"></p>
+                        <input type="text" placeholder="developer or QA" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <p>Номер телефону<img src="photos/icons/required.png" alt="Empty Input" class="input-placeholder"></p>
+                        <input type="text" placeholder="Номер телефону: +38 XXX XX XX XXX" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <p>Email<img src="photos/icons/required.png" alt="Empty Input" class="input-placeholder"></p>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+
+                    <p>
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            Я погоджуюсь із <a href="privacy-policy.html">політикою конфіденційності</a> <img src="photos/icons/required.png" alt="Empty Input" class="input-placeholder">
+                        </label>
+                    </p>
+
+                    <button type="submit">ЗАРЕЄСТРУВАТИСЯ ЗАРАЗ</button>
+                </form>
+            </div>
+        </section>
+        <section class="course">
+            <h2>Курс «Розробка сайтів»</h2>
+            <div class="swiper courseSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="photos/icons/course-icon-1.png" alt="WordPress">
+                        <h3>Розробка сайтів на WordPress</h3>
+                        <p>Курс складається з основ...</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="photos/icons/course-icon-2.png" alt="Drupal">
+                        <h3>Розробка сайтів на Drupal 8</h3>
+                        <p>Для створення складних сайтів...</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="photos/icons/course-icon-3.png" alt="Testing">
+                        <h3>Ознайомлення з тестуванням</h3>
+                        <p>У даному курсі забезпечення...</p>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="stats">
+            
+            <div class="stats-conteiner">
+                <div class="stat">
+                    <img src="photos/icons/statistic-icon-1.png" alt="Курсів організовано">
+                    <h3>25</h3>
+                    <p>Курсів організовано</p>
+                </div>
+                <div class="stat">
+                    <img src="photos/icons/statistic-icon-2.png" alt="Людей змінили професію">
+                    <h3>836</h3>
+                    <p>Годин занять проведено</p>
+                </div>
+                <div class="stat">
+                    <img src="photos/icons/statistic-icon-3.png" alt="Успішних проектів">
+                    <h3>500</h3>
+                    <p>Студентів навчено</p>
+                </div>
+                <div class="stat">
+                    <img src="photos/icons/statistic-icon-4.png" alt="Менторів і викладачів">
+                    <h3>120</h3>
+                    <p>Випускників курсів працевлаштовано</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="testimonials">
+            <h2>Що кажуть студенти наших курсів:</h2>
+            <div class="swiper testimonialsSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <blockquote>
+                            <i class="fas fa-quote-left"></i>
+                            <p>Під час проходження курсу Drupal у школі OxIT я навчився створювати не досить складні сайти та знайшов справу, якою хочу займатися. Після успішного завершення курсів мені надали можливість продовжити навчання вже в якості Intern Site Builder. Зараз я можу сказати, що Drupal та OxIT повністю змінили моє життя.</p>
+                            <i class="fas fa-quote-right"></i>
+                        </blockquote>
+
+                        <cite>Коля</cite>
+                        <p>Drupal-розробник</p>
+                        
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            <i class="fas fa-quote-left"></i>
+                            
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing 
+                                and typesetting industry. Lorem Ipsum has been 
+                                the industry's standard dummy text ever since 
+                                the 1500s, when an unknown printer took a galley
+                                of type and scrambled it to make 
+                                a type specimen book. It has survived not only five centuries, 
+                                but also the leap into electronic typesetting, remaining 
+                                essentially unchanged. It was popularised in the 1960s with 
+                                the release of Letraset sheets containing Lorem Ipsum passages, 
+                                and more recently with desktop publishing software like Aldus 
+                                PageMaker including versions of Lorem Ipsum.
+                            </p>
+                            
+                            <i class="fas fa-quote-right"></i>
+                        </blockquote>
+
+                        <cite>Коля</cite>
+                        <p>Drupal-розробник</p>
+                        
+                    </div>
+                    <div class="swiper-slide">
+                        <blockquote>
+                            <i class="fas fa-quote-left"></i>
+                            <p>Під час проходження курсу Drupal у школі OxIT я навчився створювати не досить складні сайти та знайшов справу, якою хочу займатися. Після успішного завершення курсів мені надали можливість продовжити навчання вже в якості Intern Site Builder. Зараз я можу сказати, що Drupal та OxIT повністю змінили моє життя.</p>
+                            <i class="fas fa-quote-right"></i>
+                        </blockquote>
+
+                        <cite>Коля</cite>
+                        <p>Drupal-розробник</p>
+                        
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="video">
+
+            <div class="video-container">
+                
+                <h2>Відео</h2>
+
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing 
+                    and typesetting industry. Lorem Ipsum has been 
+                    the industry's standard dummy text ever since 
+                    the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make 
+                    a type specimen book. It has survived not only five centuries, 
+                    but also the leap into electronic typesetting, remaining 
+                    essentially unchanged. It was popularised in the 1960s with 
+                    the release of Letraset sheets containing Lorem Ipsum passages, 
+                    and more recently with desktop publishing software like Aldus 
+                    PageMaker including versions of Lorem Ipsum.
+                </p>
+
+                <iframe src="https://www.youtube.com/embed/example" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+        </section>
+        <section class="mentors">
+            <h2>Наші ментори</h2>
+            <div class="swiper mentorsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Mentor 1 -->
+                    <div class="swiper-slide">
+                        <div class="mentor-photo">
+                            <img src="photos/viktor.png" alt="Mentor 1">
+                        </div>
+                        <div class="mentor-info">
+                            <h3>Віктор</h3>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing 
+                                and typesetting industry. Lorem Ipsum has been 
+                                the industry's standard dummy text ever since 
+                                the 1500s, when an unknown printer took a galley
+                                of type and scrambled it to make 
+                                a type specimen book. It has survived not only five centuries, 
+                                but also the leap into electronic typesetting, remaining 
+                                essentially unchanged. It was popularised in the 1960s with 
+                                the release of Letraset sheets containing Lorem Ipsum passages, 
+                                and more recently with desktop publishing software like Aldus 
+                                PageMaker including versions of Lorem Ipsum.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mentor 2 -->
+                    <div class="swiper-slide">
+                        <div class="mentor-photo">
+                            <img src="photos/mark.png" alt="Mentor 2">
+                        </div>
+                        <div class="mentor-info">
+                            <h3>Марк</h3>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing 
+                                and typesetting industry. Lorem Ipsum has been 
+                                the industry's standard dummy text ever since 
+                                the 1500s, when an unknown printer took a galley
+                                of type and scrambled it to make 
+                                a type specimen book. It has survived not only five centuries, 
+                                but also the leap into electronic typesetting, remaining 
+                                essentially unchanged.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mentor 3 -->
+                    <div class="swiper-slide">
+                        <div class="mentor-photo">
+                            <img src="photos/vova.png" alt="Mentor 3">
+                        </div>
+                        <div class="mentor-info">
+                            <h3>Володимир</h3>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing 
+                                and typesetting industry. Lorem Ipsum has been 
+                                the industry's standard dummy text ever since 
+                                the 1500s, when an unknown printer took a galley
+                                of type and scrambled it to make 
+                                a type specimen book. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        
+        <section class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d144.9630579153167!3d-37.81410797975159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577c1e4b8c8e1e!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1611819471234!5m2!1sen!2sau"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </section>
+        <section class="prefooter">
+            <div class="prefooter-container">
+                <div class="prefooter-item">
+                    <a href="tel:+380671234567">
+                        <img src="photos/icons/pre-1.png" alt="Гарантія якості">
+                    </a>
+                    <h3>Телефон</h3>
+                    <p><a href="tel:+380671234567">+38 067 123 45 67</a></p>
+                </div>
+                <div class="prefooter-item">
+                    <a href="mailto:info@example.com">
+                        <img src="photos/icons/pre-2.png" alt="Підтримка менторів">
+                    </a>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@example.com">info@example.com</a></p>
+                </div>
+                <div class="prefooter-item">
+                    <a href="https://www.google.com/maps?q=вул.+Київська+34,+Луцьк" target="_blank">
+                        <img src="photos/icons/pre-3.png" alt="Працевлаштування">
+                    </a>
+                    <h3>Адреса</h3>
+                    <p><a href="https://www.google.com/maps?q=вул.+Київська+34,+Луцьк" target="_blank">вул. Київська 34, Луцьк</a></p>
+                </div>
+                <div class="prefooter-item">
+                    <a href="https://facebook.com" target="_blank">
+                        <img src="photos/icons/pre-4.png" alt="Facebook">
+                    </a>
+                    <h3>Facebook</h3>
+                    <p><a href="https://facebook.com" target="_blank">facebook.com</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        
+        <p>&copy; 2025 Курси програмування у Луцьку. Всі права захищені.</p>
+        <p><a href="privacy-policy.html">Умови політики конфіденційності</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
