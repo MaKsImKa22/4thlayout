@@ -1,9 +1,18 @@
+// Select the burger menu and nav menu
 const burgerMenu = document.querySelector('.burger-menu');
 const navMenu = document.querySelector('.nav-menu');
 
+// Toggle the active class on burger menu click
 burgerMenu.addEventListener('click', () => {
-    burgerMenu.classList.toggle('active');
-    navMenu.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+// Close the burger menu when a link is clicked
+const navLinks = document.querySelectorAll('.nav-menu a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
 });
 
 
@@ -78,6 +87,35 @@ const testimonialsSwiper = new Swiper('.testimonialsSwiper', {
     },
     
   },
+});
+
+
+
+// Select the form
+const heroForm = document.querySelector('.hero-form');
+
+// Add submit event listener to the form
+heroForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  // Validate the form (example: check if all required fields are filled)
+  const inputs = heroForm.querySelectorAll('input[required]');
+  let isValid = true;
+
+  inputs.forEach((input) => {
+    if (!input.value.trim()) {
+      isValid = false;
+      input.classList.add('error'); // Add error class if input is empty
+    } else {
+      input.classList.remove('error'); // Remove error class if input is valid
+    }
+  });
+
+  // If the form is valid, show the success message
+  if (isValid) {
+    alert('Реєстрація успішна!'); // Show success message
+    heroForm.reset(); // Reset the form fields
+  }
 });
 
 
