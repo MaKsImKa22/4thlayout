@@ -5,15 +5,22 @@ $text-color: #333;
 $footer-bg: #007bff;
 $footer-text: #fff;
 $hero-bg: #f0eeee;
+$quote-color: #9c9c9c;
 
 // General styles
 body {
-  font-family: 'Open Sans', sans-serif; // Встановлюємо основний шрифт
+  font-family: 'Open Sans'; // Основний шрифт
   font-size: 16px; // Основний розмір шрифту
   line-height: 1.6; // Висота рядка для зручності читання
   color: $text-color; // Основний колір тексту
   margin: 0;
   padding: 0;
+
+  p {
+    color: lighten($text-color, 30%);
+  }
+  
+  
 }
 
 /*
@@ -28,13 +35,12 @@ section {
 */
 
 header {
-  background: $secondary-color;
-  //padding: 1rem 15px; // Add padding for spacing
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); // Optional shadow for depth
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  background: $secondary-color;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 
   .container {
     max-width: 1220px; // Limit the width of the header content
@@ -91,14 +97,14 @@ header {
       padding: 0;
 
       li {
-        margin: 0 2rem;
-        text-align: center;
+        margin: 0 1rem;
+        text-align: right;
         padding-top: 0.5rem;
+        font-size: 0.9rem;
 
         a {
           text-decoration: none;
-          color: $text-color;
-          font-weight: bold;
+          color: lighten($text-color, 20%);
 
           &:hover {
             color: $primary-color;
@@ -111,12 +117,12 @@ header {
       background: $primary-color;
       color: $footer-text;
       border: none;
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       border-radius: 45px;
       cursor: pointer;
       transition: background 0.3s ease;
-      width: 175px; // Make the button full width
-      height: 45px;
+      width: 130px; // Make the button full width
+      height: 35px;
 
       &:hover {
         background: darken($primary-color, 10%);
@@ -138,14 +144,23 @@ header {
       background: $secondary-color;
       width: 100%;
       padding: 0;
-      padding-bottom: 1rem;
 
       ul {
         flex-direction: column;
 
         li {
+          padding: 0;
           margin: 0.5rem 0;
+          text-align: center;
         }
+      }
+
+      button {
+        margin-bottom: 1rem;
+      }
+
+      &.active {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Add shadow below the element
       }
     }
 
@@ -161,62 +176,98 @@ main {
 
 .hero {
   text-align: center;
-  padding: 2rem 2rem; // Adjust padding for hero section
+  padding: 3rem 15px; // Збільшено відступи для блоку
   background: $hero-bg;
   color: $text-color;
-  margin-top: -1rem; // Decrease margin-top by 10px
-
-  
 
   .hero-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between; // Ensure space between text and form
+    align-items: flex-start; // Вирівнювання по верхньому краю
+    justify-content: space-between; // Простір між текстом і формою
     max-width: 1220px;
     margin: 0 auto;
     flex-wrap: wrap;
-    gap: 2rem; // Add space between .hero-text and .hero-form
+    gap: 2rem; // Відступ між текстом і формою
+
+    @media (max-width: 768px) {
+      flex-direction: column; // Вертикальне розташування тексту та форми
+      gap: 1rem;
+    }
 
     .hero-text {
-      flex: 1 1 50%; // Take 50% of the container's width
-      text-align: center;
+      flex: 1 1 50%; // Текст займає 50% ширини
+      text-align: center; // Вирівнювання тексту по лівому краю
+      
+      margin-top: 10rem;
+      @media (max-width: 936px) {
+        margin-top: 0;
+      }
 
       h1 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
+        font-size: 2rem; // Збільшено розмір заголовка
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+        line-height: 1.4;
+        @media (max-width: 320px) {
+          font-size: 20px;
+        }
       }
 
       p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 2rem;
+        line-height: 1.6;
+        padding: 0 7rem; // Відступи для абзацу
+        @media (max-width: 936px) {
+          padding: 0;
+        }
+        @media (max-width: 320px) {
+          font-size: 16px;
+          padding: 0;
+        }
+        @media (max-width: 530px) {
+          font-size: 16px;
+          padding: 0;
+        }
       }
     }
 
     .hero-form {
-      flex: 1 1 50%; // Take 50% of the container's width
+      flex: 1 1 50%; // Форма займає 50% ширини
       display: flex;
       flex-direction: column;
-      gap: 1rem; // Add spacing between form elements
-      max-width: 400px; // Limit the width of the form
-      margin: auto; // Center the form horizontally
+      gap: 1rem; // Відступ між елементами форми
+      max-width: 500px; // Обмеження ширини форми
 
-      p {
-        text-align: left;
-        margin-top: 0;
-        margin-bottom: 0;
+      @media (max-width: 1200px) {
+        margin: auto;
+        
       }
 
+
+      .input-placeholder {
+        height: 10px;
+        width: height;
+        margin-left: 5px;
+      }
+
+      
+
       h2 {
-        text-align: left; // Align heading to the left
-        font-size: 1.2rem;
-        margin-top: 0;
-        margin-bottom: 0;
+        text-align: left; // Вирівнювання заголовка форми по лівому краю
+        font-size: 1.5rem;
+        margin: 0;
+        @media (max-width: 320px) {
+          font-size: 19px;
+        }
       }
 
       .input-wrapper {
-        position: relative;
+        position: flex;
         margin-bottom: 0;
-        width: 100%; // Ensure it spans the full width of its container
+        @media (max-width: 1300px) {
+          padding-right: 2rem;
+        }
 
         
 
@@ -226,18 +277,42 @@ main {
           border: 1px solid lighten($text-color, 40%);
           border-radius: 5px;
           font-size: 1rem;
-          box-sizing: border-box;
 
           &::placeholder {
             color: lighten($text-color, 30%);
           }
-          
         }
       }
 
-      .input-placeholder {
-        width: 10px;
-        height: 10px;
+      p {
+        text-align: left;
+        font-size: 0.8rem;
+        margin: 0;
+
+        label {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem; // Відступ між чекбоксом і текстом
+        
+          input {
+            font-size: 16px;
+          }
+
+          a {
+            color: $primary-color;
+            text-decoration: none;
+  
+            &:hover {
+              color: darken($primary-color, 10%);
+            }
+          }
+        
+          @media (max-width: 410px) {
+            flex-wrap: wrap; // Дозволяє переносити текст на новий рядок
+          }
+        }
+
+        
       }
 
       button {
@@ -249,23 +324,16 @@ main {
         border-radius: 45px;
         cursor: pointer;
         transition: background 0.3s ease;
-        width: 75%;
+        width: 100%; // Кнопка займає всю ширину
         margin: 0 auto;
-
-        @media (max-width: 768px) {
-          width: 100%; 
-        }
 
         &:hover {
           background: darken($primary-color, 10%);
         }
       }
-
-      
     }
   }
 }
-
 
 .course {
   margin: 2rem 0;
@@ -289,6 +357,11 @@ main {
       align-items: center;
       justify-content: center;
       padding: 0; // Add padding to the slides
+
+      @media (max-width: 768px) {
+        flex-direction: column; // Вертикальне розташування для слайдів
+        text-align: center;
+      }
 
       img {
         max-width: 100px; // Set a maximum width for images
@@ -314,9 +387,9 @@ main {
 
       p {
         font-size: 1rem;
-        color: $text-color;
         line-height: 1.5;
-        margin-bottom: 0.5rem; // Add spacing below the text
+        margin-top: 0;
+        margin-bottom: 2rem; // Add spacing below the text
       }
     }
 
@@ -324,16 +397,17 @@ main {
       position: relative; // Ensure it stays below the content
       margin-top: 0; // Add spacing between the Swiper content and pagination
       z-index: 10; // Ensure it appears above other elements
+
+      .swiper-pagination-bullet {
+        background: $quote-color; // Change bullet color
+        width: 10px; // Adjust bullet size
+        height: 10px; // Adjust bullet size
+      }
     }
   }
 }
 
 .stats {
-  /*display: flex;
-  justify-content: space-around;
-  background: $primary-color;
-  color: $footer-text;
-  padding: 2rem 1rem;*/
 
   justify-content: space-around;
   color: $footer-text;
@@ -351,6 +425,12 @@ main {
     margin-bottom: 120px;
     display: flex;
     margin: 2rem 2rem;
+
+    @media (max-width: 768px) {
+      display: grid; // Сітка для статистики
+      grid-template-columns: repeat(2, 1fr); // 2 колонки
+      gap: 1rem;
+    }
   }
 
   img {
@@ -373,6 +453,11 @@ main {
     p {
       font-size: 1rem;
       margin-top: 0;
+      color: $footer-text;
+      @media (max-width: 396px) {
+        font-size: 0.8rem; // Зменшення розміру тексту для мобільних
+        line-height: 1.4;
+      }
     }
   }
 
@@ -403,9 +488,8 @@ main {
 
   p {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 8rem;
     margin-top: -5px;
-    color: $text-color;
     margin-left: 20px;
     margin-right: 20px;
   }
@@ -414,6 +498,8 @@ main {
     width: 100%;
     max-width: 800px; // Limit the width for better readability
     margin: 0 auto;
+
+    
 
     .swiper-slide {
       text-align: center;
@@ -432,6 +518,12 @@ main {
         margin-bottom: 1rem;
         color: $text-color;
 
+        p {
+          margin: 0;
+          padding: 0 1rem; // Add padding for better readability
+          text-align: center;
+        }
+
         i {
           font-size: 2rem;
           color: $primary-color;
@@ -442,13 +534,15 @@ main {
           top: -5px;
           left: -40px;
           margin-left: 20px;
+          color: $quote-color;
         }
 
         .fa-quote-right {
           position: absolute;
-          bottom: 35px;
+          bottom: 0;
           right: -40px;
           margin-right: 20px;
+          color: $quote-color;
         }
       }
 
@@ -462,7 +556,12 @@ main {
     }
 
     .swiper-pagination {
-      margin-top: 1rem;
+
+      .swiper-pagination-bullet {
+        background: $quote-color; // Change bullet color
+        width: 10px; // Adjust bullet size
+        height: 10px; // Adjust bullet size
+      }
     }
   }
 
@@ -491,16 +590,21 @@ main {
 
 .video {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 3rem 15px;
   background-color: $hero-bg;
 
+  .video-container {
+    max-width: 1220px;
+    margin: auto auto;
+  }
+
   iframe {
-    max-width: 100%;
+    width: 75%;
     height: auto;
-    border-radius: 10px; // Add rounded corners to the video
-    width: 100%;
-    max-width: 1020px;
-    height: auto;
+    aspect-ratio: 560 / 315; // Maintain the 560:315 aspect ratio
+    @media (max-width: 810px) {
+      width: 100%; // Make the video responsive on smaller screens
+    }
   }
 }
 
@@ -510,8 +614,16 @@ main {
   h2 {
     text-align: center;
     font-size: 2rem;
+    font-weight: 500;
     margin-bottom: 1.5rem;
     color: $text-color;
+  }
+
+  .swiper {
+    max-width: 1220px; // Limit the width for better readability
+    margin: auto auto;
+
+    
   }
 
   .swiper-slide {
@@ -523,23 +635,39 @@ main {
     padding: 0;
 
     .mentor-photo {
-      img {
-        max-width: 150px; // Set a maximum width for the photo
+      padding-left: 7rem;
+      padding-bottom: 2rem;
+      @media (max-width: 1024px) {
+        padding-left: 0;
+        padding-bottom: 0;
+      }
+
+      img {  
+        width: 300px; // Set a maximum width for the photo
         height: auto;
-        border-radius: 50%; // Make the photo circular
+        @media (max-width: 500px) {
+          width: 175px; // Make the image responsive on smaller screens
+          height: auto; // Maintain aspect ratio
+        }
       }
     }
 
     .mentor-info {
+      margin-left: 3rem;
+      @media (max-width: 1024px) {
+        margin-left: 0;
+      }
       h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        margin-top: 0;
         color: $primary-color;
       }
 
       p {
         font-size: 1rem;
-        color: $text-color;
+        font-weight: 100;
         line-height: 1.5;
         padding-right: 15px;
 
@@ -554,6 +682,12 @@ main {
     position: relative; // Ensure it stays below the content
     margin-top: 0; // Add spacing between the Swiper content and pagination
     z-index: 10;
+
+    .swiper-pagination-bullet {
+      background: $quote-color; // Change bullet color
+      width: 10px; // Adjust bullet size
+      height: 10px; // Adjust bullet size
+    }
   }
 
   @media (min-width: 1024px) {
@@ -635,6 +769,11 @@ main {
       margin: 0 auto; // Center the paragraph
       transition: color 0.3s ease; // Smooth transition for text color
 
+      @media (max-width: 320px) {
+        font-size: 0.9rem; // Adjust font size for smaller screens
+        text-transform: none; // Remove text transformation
+      }
+
       a {
         color: $secondary-color; // Default link color
         transition: color 0.3s ease; // Smooth transition for link color
@@ -664,6 +803,32 @@ footer {
   color: $footer-text;
   text-align: center;
   padding: 2rem 1rem;
+
+  .copy {
+      
+    color: $footer-bg;
+    text-decoration: none;
+    font-weight: 100;
+
+    &:hover {
+      color: darken($footer-bg, 10%);
+    }
+  }
+
+  .copy_1 {
+    color: lighten($text-color, 20%);
+    text-decoration: none;
+
+    &:hover {
+      color: darken($footer-bg, 10%);
+    }
+  }
+
+
+  a {
+    
+    font-size: 0.9rem;
+  }
 
   .contact-info {
     display: flex;
@@ -700,36 +865,11 @@ footer {
   margin: 0 auto;
   padding: 0 15px;
   box-sizing: border-box;
-}
 
-
-
-@media (max-width: 320px) {
-  .burger-menu {
-    display: flex; // Show the burger menu
-  }
-
-  .nav-menu {
-    display: none; // Hide the navigation menu by default
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: $secondary-color;
-    width: 100%;
-    padding-right: -16px;
-
-    ul {
-      flex-direction: column;
-
-      li {
-        margin: 0.5rem 0;
-      }
-    }
-  }
-
-  .nav-menu.active {
-    display: flex; // Show the navigation menu when active
+  @media (max-width: 1220px) {
+    padding: 0 15px; // Відступи для контейнера
   }
 }
+
+
 
