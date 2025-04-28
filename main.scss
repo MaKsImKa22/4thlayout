@@ -127,6 +127,11 @@ header {
       &:hover {
         background: darken($primary-color, 10%);
       }
+
+      a {
+        text-decoration: none;
+        color: $footer-text;
+      }
     }
   }
 
