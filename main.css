@@ -199,8 +199,9 @@ main {
             color: gray; }
       .hero .hero-container .hero-form p {
         text-align: left;
-        font-size: 0.8rem;
-        margin: 0; }
+        font-size: 0.9rem;
+        margin: 0;
+        color: #333; }
         .hero .hero-container .hero-form p label {
           display: flex;
           align-items: center;
